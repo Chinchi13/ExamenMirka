@@ -8,9 +8,12 @@ pipeline {
             '''
         }
     }//mirka
+
     stage('JMeter Tests') {
         steps {
             sh '''
+            ls
+            export PATH=/home/pjcalvov/jmeter/apache-jmeter-5.3/bin:$PATH
             cd LOAD
             jmeter -n -t TestPlanExamen.jmx
             '''
@@ -18,3 +21,6 @@ pipeline {
     }
     }
 }
+
+
+    
