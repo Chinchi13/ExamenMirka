@@ -1,0 +1,20 @@
+pipeline {
+    agent any{
+    stage('Newman Tests API') {
+        steps {
+            sh '''
+            cd API/newman
+            newman run Examen.postman_collection.json -e Examen.postman_environment.json
+            '''
+        }
+    }
+    stage('JMeter Tests') {
+        steps {
+            sh '''
+            cd LOAD
+            jmeter -n -t TestPlanExamen.jmx
+            '''
+        }
+    }
+    }
+}
