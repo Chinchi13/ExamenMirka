@@ -7,7 +7,7 @@ pipeline {
             newman run Examen.postman_collection.json -e Examen.postman_environment.json
             '''
         }
-    }
+    }//mirka
     stage('JMeter Tests') {
         steps {
             sh '''
