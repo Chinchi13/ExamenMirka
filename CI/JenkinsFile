@@ -18,6 +18,17 @@ pipeline {
             jmeter -n -t TestPlanExamen.jmx
             '''
         }
+      }
+      stage('RestAssured') {
+      steps {
+          sh '''
+          cd APIS/restAssured
+          mvn clean test
+          '''
+            } 
+            
+      }
+
     }
   }
 }
