@@ -22,7 +22,7 @@ pipeline {
       stage('RestAssured') {
       steps {
           sh '''
-          cd APIS/restAssured
+          cd API/restAssured
           mvn clean test
           '''
             } 
